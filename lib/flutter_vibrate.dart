@@ -19,9 +19,9 @@ class Vibrate {
       const Duration(milliseconds: 500);
 
   /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate({Duration dration}) {
+  static Future vibrate({Duration duration}) {
     return _channel.invokeMethod(
-      'vibrate', {"duration": dration ?? _DEFAULT_VIBRATION_DURATION.inMilliseconds});
+      'vibrate', {"duration": duration?.inMilliseconds ?? _DEFAULT_VIBRATION_DURATION.inMilliseconds});
   }
 
   /// Whether the device can actually vibrate or not
